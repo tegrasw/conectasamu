@@ -9,7 +9,7 @@ USER=$(logname)  # detecta usuário logado
 
 # Dependências
 sudo apt-get update
-sudo apt-get install -y curl jq dpkg notify-osd
+sudo apt-get install -y curl jq dpkg notify-osd libnotify-bin
 
 # Instalar script de atualização
 sudo curl -sL "$SCRIPT_URL" -o "$INSTALL_PATH"
