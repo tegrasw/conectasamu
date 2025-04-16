@@ -60,11 +60,11 @@ fi
 
 # Notificação apenas se houve mudança
 if [ "$INSTALLED_VERSION" != "$POST_VERSION" ] && [ -f "$NOTIFY_USER_FILE" ]; then
-    USERNAME=$(cat "$NOTIFY_USER_FILE")
-    export DISPLAY=:0
-    sudo -u "$USERNAME" notify-send -u normal -i software-update \
-        "ConectaSAMU atualizado" \
-        "Feche e reabra o aplicativo para aplicar a versão $POST_VERSION"
+  NOTIFY_USER=$(cat "$NOTIFY_USER_FILE")
+  USER_ID=$(id -u "$NOTIFY_USER")
+  export DISPLAY=:0
+  export DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/$USER_ID/bus"
+  notify-send "ConectaSAMU atualizado" "Quando possível, feche e reabra o aplicativo."
 fi
 
 echo "✅ Atualização concluída para versão $POST_VERSION"
