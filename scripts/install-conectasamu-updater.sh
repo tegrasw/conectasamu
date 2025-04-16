@@ -2,7 +2,7 @@
 
 set -e
 
-SCRIPT_URL="https://raw.githubusercontent.com/tegrasw/conectasamu/main/scripts/update-conectasamu.sh"
+SCRIPT_URL="https://raw.githubusercontent.com/tegrasw/conectasamu-installer/main/scripts/update-conectasamu.sh"
 INSTALL_PATH="/usr/local/bin/update-conectasamu.sh"
 SYSTEMD_DIR="/etc/systemd/system"
 USER=$(logname)  # detecta usuário logado
