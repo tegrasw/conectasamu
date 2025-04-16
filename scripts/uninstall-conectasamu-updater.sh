@@ -9,8 +9,6 @@ SYSTEMD_DIR="/etc/systemd/system"
 
 # Parar e desativar o serviço
 echo "Parando e desativando o serviço de atualização..."
-sudo systemctl stop conectasamu-updater.timer
-sudo systemctl disable conectasamu-updater.timer
 sudo systemctl stop conectasamu-updater.service
 sudo systemctl disable conectasamu-updater.service
 
