@@ -45,14 +45,20 @@
   </style>
 </head>
 <body>
-  <h1>Instale o ConectaSAMU</h1>
-  <p>Copie e cole o comando abaixo no seu terminal Linux:</p>
+  <h1>Instale ou Desinstale o ConectaSAMU</h1>
+  <p>Copie e cole os comandos abaixo no seu terminal Linux:</p>
+  
+  <h2>Instalação:</h2>
   <pre id="install-cmd">curl -sL https://instalar.conectasamu.app/scripts/install-conectasamu-updater.sh | bash</pre>
-  <button onclick="copyCommand()">📋 Copiar Comando</button>
-
+  <button onclick="copyCommand('install-cmd')">📋 Copiar Comando de Instalação</button>
+  
+  <h2>Desinstalação:</h2>
+  <pre id="uninstall-cmd">curl -sL https://instalar.conectasamu.app/scripts/uninstall-conectasamu-updater.sh | bash</pre>
+  <button onclick="copyCommand('uninstall-cmd')">📋 Copiar Comando de Desinstalação</button>
+  
   <script>
-    function copyCommand() {
-      const cmd = document.getElementById("install-cmd").innerText;
+    function copyCommand(cmdId) {
+      const cmd = document.getElementById(cmdId).innerText;
       navigator.clipboard.writeText(cmd).then(() => {
         alert("Comando copiado para a área de transferência!");
       });
