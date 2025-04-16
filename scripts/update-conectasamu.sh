@@ -1,6 +1,6 @@
 #!/bin/bash
 
-REPO="tegrasw/conectasamu"
+REPO="tegrasw/conectasamu-installer"
 PACKAGE_NAME="conectasamu"
 FILENAME="conectasamu.deb"
 TMP_DIR="/tmp/conectasamu-update"
