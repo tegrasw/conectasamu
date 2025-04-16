@@ -62,7 +62,6 @@ fi
 if [ "$INSTALLED_VERSION" != "$POST_VERSION" ] && [ -f "$NOTIFY_USER_FILE" ]; then
     USERNAME=$(cat "$NOTIFY_USER_FILE")
     export DISPLAY=:0
-    export DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/$(id -u "$USERNAME")/bus"
     sudo -u "$USERNAME" notify-send -u normal -i software-update \
         "ConectaSAMU atualizado" \
         "Feche e reabra o aplicativo para aplicar a versão $POST_VERSION"
