@@ -6,6 +6,7 @@ set -e
 INSTALL_PATH="/usr/local/bin/update-conectasamu.sh"
 CONFIG_DIR="/etc/conectasamu-updater"
 SYSTEMD_DIR="/etc/systemd/system"
+TIMER_WANTS_DIR="/etc/systemd/system/timers.target.wants"
 
 # Parar e desativar o serviço
 echo "Parando e desativando o serviço de atualização..."
@@ -16,6 +17,7 @@ sudo systemctl disable conectasamu-updater.service
 echo "Removendo arquivos do systemd..."
 sudo rm -f "$SYSTEMD_DIR/conectasamu-updater.service"
 sudo rm -f "$SYSTEMD_DIR/conectasamu-updater.timer"
+sudo rm -f "$TIMER_WANTS_DIR/conectasamu-updater.timer"
 
 # Remover script de atualização
 echo "Removendo script de atualização..."
